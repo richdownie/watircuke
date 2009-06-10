@@ -3,10 +3,10 @@ module NavigationHelpers
     case page_name
     
     when /the guides page/i
-      @environment + "/guides/home"
-      
-    when /the sm2 login page/i
-      @sm2 + "/main"  
+      @environment + "guides/home"
+
+    when /the watircuke page/i
+      @environment + "richdownie/watircuke/tree/master"
             
     # Add more page name => path mappings here
     

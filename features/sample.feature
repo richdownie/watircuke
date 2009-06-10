@@ -1,4 +1,4 @@
 Feature: Github
   
-  Scenario: test the guiedes page
-    Given I am on the guides page
+  Scenario: test the guides page
+    Given I am on the watircuke page

@@ -8,10 +8,10 @@ if ENV['FIREWATIR']
 else
   case RUBY_PLATFORM
   when /darwin/
-    # require 'firewatir'
-    # Browser = FireWatir::Firefox
-    require 'safariwatir'    
-    Browser = Watir::Safari
+    require 'firewatir'
+    Browser = FireWatir::Firefox
+    # require 'safariwatir'    
+    # Browser = Watir::Safari
   when /win32|mingw/
     require 'watir'
     Browser = Watir::IE
@@ -29,10 +29,11 @@ end
 
  Before do
    @browser = browser
-   @environment = "github.com/"
+   @environment = "http://github.com/"
+   sleep 3
  end
 
  # "after all"
  at_exit do
-   @browser.close
+   # @browser.close
  end
