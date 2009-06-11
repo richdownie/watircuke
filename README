@@ -7,3 +7,6 @@ Watir ~ Firewatir ~ Safariwatir:
 http://wtr.rubyforge.org/install.html
 
 Once installed just run "cucumber features" in Safari, Firefox, Watir
+
+
+**cukewatir maximizes the Gherkin speak and minimizes the Watir code.    
