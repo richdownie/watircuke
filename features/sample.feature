@@ -8,4 +8,3 @@ Feature: Github
     And I select "Code" from the select list "type_value"
     And I click the "aslakhellesoy / cucumber" link
     Then I verify the page contains the text "BDD that talks to domain experts first and code second"
-    Then I visit "blog"
