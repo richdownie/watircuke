@@ -1,17 +1,13 @@
-require 'test/unit/assertions'
-include Test::Unit::Assertions
 require 'spec'
-
-if ENV['FIREWATIR']
-  require 'firewatir'
-  Browser = FireWatir::Firefox
+ 
+if ENV['SAFARIWATIR']
+  require 'safariwatir'
+  Browser = Watir::Safari
 else
   case RUBY_PLATFORM
   when /darwin/
     require 'firewatir'
     Browser = FireWatir::Firefox
-    # require 'safariwatir'    
-    # Browser = Watir::Safari
   when /win32|mingw/
     require 'watir'
     Browser = Watir::IE
@@ -23,17 +19,16 @@ else
   end
 end
  
-
- # "before all"
+ 
  browser = Browser.new
-
+ # "before all"
  Before do
    @browser = browser
-   @environment = "http://github.com/"
-   sleep 3
+   @environment = "http://"
  end
-
+ 
  # "after all"
- at_exit do
+ After do
    # @browser.close
  end
+
