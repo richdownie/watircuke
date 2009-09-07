@@ -21,6 +21,6 @@ Given /I click the "(.*)" radio button/ do |type|
   elsif @browser.radio(:class, /(^|\s)#{type}(\s|$)/).exists? then
         @browser.radio(:class, /(^|\s)#{type}(\s|$)/).set(text)
   else
-    fail ("could not find what you asked for")
+    fail("could not find what you asked for")
   end
 end

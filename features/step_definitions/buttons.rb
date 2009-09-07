@@ -21,7 +21,7 @@ Given /I click the "(.*)" button/ do |type|
   elsif @browser.button(:class, /(^|\s)#{type}(\s|$)/).exists? then
        @browser.button(:class, /(^|\s)#{type}(\s|$)/).set(text)
   else
-    fail ("could not find what you asked for")
+    fail("could not find what you asked for")
   end
 end
 

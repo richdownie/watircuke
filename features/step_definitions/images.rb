@@ -18,6 +18,6 @@ Given /I click the "(.*)" image/ do |type|
   elsif @browser.images(:class, /(^|\s)#{type}(\s|$)/).exists? then
         @browser.images(:class, /(^|\s)#{type}(\s|$)/).set(text)
    else
-     fail ("could not find what you asked for")
+     fail("could not find what you asked for")
    end
 end

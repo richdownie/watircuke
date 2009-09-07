@@ -12,6 +12,6 @@ Given /I click the "(.*)" link/ do |type|
   elsif @browser.link(:class, /(^|\s)#{type}(\s|$)/).exists? then
         @browser.link(:class, /(^|\s)#{type}(\s|$)/).set(text)
   else
-    fail ("could not find what you asked for")
+    fail("could not find what you asked for")
   end
 end

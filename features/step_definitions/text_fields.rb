@@ -19,7 +19,7 @@ Given /I fill in the text field "(.*)" with "(.*)"/ do |type, text|
         @browser.text_field(:class, /(^|\s)#{type}(\s|$)/).set(text)
      
   else
-    fail ("could not find what you asked for")
+    fail("could not find what you asked for")
   end
 end  
 
