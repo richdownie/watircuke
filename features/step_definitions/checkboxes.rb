@@ -1,4 +1,4 @@
-# Try running with the checkbox  ":id", ":name", ":value", ":text", ":index" or ":class" element attribute.
+# Try running with the checkbox  ":id", ":name", ":value", ":index" or ":class" element attribute.
 # Does not matter what you select!
 # The proper watir code will be executed regardless.
 
@@ -11,9 +11,6 @@ Given /I click the "(.*)" checkbox/ do |type|
   
   elsif @browser.checkbox(:value, type).exists? then
         @browser.checkbox(:value, type).click
-  
-  elsif @browser.checkbox(:text, type).exists? then
-        @browser.checkbox(:text, type).click
   
   elsif @browser.checkbox(:index, type).exists? then
         @browser.checkbox(:index, type).click
