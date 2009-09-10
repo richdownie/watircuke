@@ -41,11 +41,11 @@ Feature: Testing watircuke's ability to click the many different Element Attribu
 ## Images
   Scenario: test checkbox by id
     Given I am on the watircuke page
-    And I click the "github" image
+    And I click the "golf_id" image
 
   Scenario: test checkbox by src
     Given I am on the watircuke page
-    And I click the "/images/git.png" image
+    And I click the "/images/golf.png" image
 
   Scenario: test checkbox by name
     Given I am on the watircuke page
