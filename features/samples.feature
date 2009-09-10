@@ -67,3 +67,20 @@ Feature: Testing watircuke's ability to click the many different Element Attribu
   Scenario: test links by class
     Given I am on the watircuke page
     And I click the "class_link" link
+  
+## Radio Buttons
+  Scenario: test radio buttons by id
+    Given I am on the watircuke page
+    And I click the "radio_button_click_on" radio button
+    
+  Scenario: test radio buttons by name
+    Given I am on the watircuke page
+    And I click the "radio_button" radio button
+    
+  Scenario: test radio buttons by value
+    Given I am on the watircuke page
+    And I click the "click_on" radio button
+    
+  Scenario: test radio buttons by index
+    Given I am on the watircuke page
+    And I click the "1" radio button
