@@ -10,7 +10,7 @@ Given /I click the "(.*)" link/ do |type|
         @browser.link(:text, type).click
      
   elsif @browser.link(:class, /(^|\s)#{type}(\s|$)/).exists? then
-        @browser.link(:class, /(^|\s)#{type}(\s|$)/).set(text)
+        @browser.link(:class, /(^|\s)#{type}(\s|$)/).click
   else
     fail("could not find what you asked for")
   end

@@ -39,18 +39,31 @@ Feature: Testing watircuke's ability to click the many different Element Attribu
     And I click the "1" checkbox
 
 ## Images
-  Scenario: test checkbox by id
+  Scenario: test images by id
     Given I am on the watircuke page
     And I click the "golf_id" image
 
-  Scenario: test checkbox by src
+  Scenario: test images by src
     Given I am on the watircuke page
     And I click the "/images/golf.png" image
 
-  Scenario: test checkbox by name
+  Scenario: test images by name
     Given I am on the watircuke page
     And I click the "image_name" image
 
-  Scenario: test checkbox by class
+  Scenario: test images by class
     Given I am on the watircuke page
     And I click the "pic_class" image
+
+## Links
+  Scenario: test links by id
+    Given I am on the watircuke page
+    And I click the "link_id" link
+
+  Scenario: test links by text
+    Given I am on the watircuke page
+    And I click the "Link It" link
+
+  Scenario: test links by class
+    Given I am on the watircuke page
+    And I click the "class_link" link
