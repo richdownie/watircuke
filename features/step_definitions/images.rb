@@ -3,8 +3,8 @@
 # The proper watir code will be executed regardless.
 
 Given /I click the "(.*)" image/ do |type|
-  if @browser.image(:src, type).exists? then
-     @browser.image(:src, type).click
+  if @browser.image(:src, /(^|\s)#{type}(\s|$)/).exists? then
+     @browser.image(:src, /(^|\s)#{type}(\s|$)/).click
   
   elsif @browser.image(:id, type).exists? then
         @browser.image(:id, type).click
