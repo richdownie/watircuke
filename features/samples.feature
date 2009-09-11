@@ -84,3 +84,20 @@ Feature: Testing watircuke's ability to click the many different Element Attribu
   Scenario: test radio buttons by index
     Given I am on the watircuke page
     And I click the "1" radio button
+  
+## Select Lists
+  Scenario: test radio buttons by id
+    Given I am on the watircuke page
+    And I select "Watir" from "post_category"
+    
+  Scenario: test radio buttons by name
+    Given I am on the watircuke page
+    And I select "Cucumber" from "post[category]"
+    
+  Scenario: test radio buttons by class
+    Given I am on the watircuke page
+    And I select "Ruby" from "class_select"
+    
+  Scenario: test radio buttons by index
+    Given I am on the watircuke page
+    And I select "Watir" from "1"
