@@ -101,3 +101,24 @@ Feature: Testing watircuke's ability to click the many different Element Attribu
   Scenario: test radio buttons by index
     Given I am on the watircuke page
     And I select "Watir" from "1"
+  
+##Text Fields
+  Scenario: test text field by id
+    Given I am on the watircuke page
+    And I fill in the text field "tf_id" with "Entered Text"
+    
+  Scenario: test text field by name
+    Given I am on the watircuke page
+    And I fill in the text field "test_text_field" with "Entered More Text"
+    
+  Scenario: test text field by value
+    Given I am on the watircuke page
+    And I fill in the text field "Enter Text" with "And More"
+    
+  Scenario: test text field by class
+    Given I am on the watircuke page
+    And I fill in the text field "class_tf" with "Entered Even More Text"
+    
+  Scenario: test text field by index
+    Given I am on the watircuke page
+    And I fill in the text field "1" with "All Done!"
