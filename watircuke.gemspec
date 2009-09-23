@@ -14,7 +14,7 @@ s.has_rdoc = true
   s.rdoc_options = ["--inline-source", "--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubyforge_project = %q{watircuke}
-  s.rubygems_version = %q{1.3.0}
+  s.rubygems_version = %q{1.3.0}s.summary = %q{Cross-Browser automated with Cucumber and Watir}  
 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
