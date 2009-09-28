@@ -1,21 +1,24 @@
-# Try running with the image ":src", ":id", ":name", ":class" element attribute.
+# Try running with the image ":src", ":id", ":name", ":index", ":class" element attribute.
 # Does not matter what you select!
 # The proper watir code will be executed regardless.
 
 Given /I click the "(.*)" image/ do |type|
-  if @browser.images(:src, type).exists? then
-     @browser.images(:src, type).click
+  if @browser.image(:src, type).exists? then
+     @browser.image(:src, type).click
   elsif 
-    @browser.images(:id, type).exists? then
-    @browser.images(:id, type).click
+    @browser.image(:id, type).exists? then
+    @browser.image(:id, type).click
   elsif 
-    @browser.images(:name, type).exists? then
-    @browser.images(:name, type).click
+    @browser.image(:name, type).exists? then
+    @browser.image(:name, type).click
   elsif 
-    @browser.images(:text, type).exists? then
-    @browser.images(:text, type).click
+    @browser.image(:text, type).exists? then
+    @browser.image(:text, type).click
   elsif 
-    @browser.images(:class, type).exists? then
-    @browser.images(:class, type).click
+    @browser.image(:index, type).exists? then
+    @browser.image(:index, type).click
+  elsif 
+    @browser.image(:class, type).exists? then
+    @browser.image(:class, type).click
   end
 end
