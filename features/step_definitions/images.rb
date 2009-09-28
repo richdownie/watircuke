@@ -3,11 +3,19 @@
 # The proper watir code will be executed regardless.
 
 Given /I click the "(.*)" image/ do |type|
-  @types.each do |x|
-    if @browser.button(x, type).exists? then
-      @browser.button(x, type).click
-    else
-      fail("could not find what you asked for")
-    end
+  if @browser.images(:src, type).exists? then
+     @browser.images(:src, type).click
+  elsif 
+    @browser.images(:id, type).exists? then
+    @browser.images(:id, type).click
+  elsif 
+    @browser.images(:name, type).exists? then
+    @browser.images(:name, type).click
+  elsif 
+    @browser.images(:text, type).exists? then
+    @browser.images(:text, type).click
+  elsif 
+    @browser.images(:class, type).exists? then
+    @browser.images(:class, type).click
   end
 end

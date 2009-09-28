@@ -1,13 +1,18 @@
-# Try running with the link "id", "text", "class" element attribute.
+# Try running with the link ":id", ":text", ":index", ":class" element attribute.
 # Does not matter what you select!
 # The proper watir code will be executed regardless.
 
-Given /I click the "(.*)" link/ do |type|
-  @types.each do |x|
-    if @browser.button(x, type).exists? then
-      @browser.button(x, type).click
-    else
-      fail("could not find what you asked for")
-    end
+Given /I click the "(.*)" link/ do |text|
+  if @browser.link(:id, type).exists? then
+     @browser.link(:id, type).click
+   elsif 
+     @browser.link(:text, type).exists? then
+     @browser.link(:text, type).click
+   elsif 
+     @browser.link(:index, type).exists? then
+     @browser.link(:index, type).click
+  elsif 
+    @browser.link(:class, type).exists? then
+    @browser.link(:class, type).click
   end
 end

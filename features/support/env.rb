@@ -25,7 +25,6 @@ end
  Before do
    @browser = browser
    @environment = "http://"
-   @types = %w{ :id :name :value :index :class :src }
  end
  
  # "after all"
