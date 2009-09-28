@@ -1,4 +1,7 @@
-Given /I should see the text "(.*)"/ do |text|
-  @browser.text.include?(text).should be_true              # rspec...lovely!
-  @browser.text.should include(text)
+Given /I should see the text "(.*)"/ do |txt|
+  describe "Matcher" do
+    it "should have text" do
+      @browser.should have_text(txt)
+    end
+  end
 end
