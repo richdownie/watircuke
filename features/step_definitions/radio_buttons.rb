@@ -20,5 +20,7 @@ Given /I click the "(.*)" radio button/ do |type|
   elsif 
     @browser.radio(:class, type).exists? then
     @browser.radio(:class, type).click
+  else
+    fail("could not find what you asked for")
   end
 end

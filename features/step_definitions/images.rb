@@ -20,5 +20,7 @@ Given /I click the "(.*)" image/ do |type|
   elsif 
     @browser.image(:class, type).exists? then
     @browser.image(:class, type).click
+  else
+    fail("could not find what you asked for")  
   end
 end

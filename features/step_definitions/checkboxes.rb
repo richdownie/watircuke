@@ -20,5 +20,7 @@ Given /I click the "(.*)" checkbox/ do |type|
   elsif
     @browser.checkbox(:class, type).exists? then
     @browser.checkbox(:class, type).click
+  else
+    fail("could not find what you asked for")
   end
 end

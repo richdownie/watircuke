@@ -11,5 +11,7 @@ Given /I click the "(.*)" link/ do |type|
   elsif 
     @browser.link(:class, type).exists? then
     @browser.link(:class, type).click
+  else
+    fail("could not find what you asked for")
   end
 end

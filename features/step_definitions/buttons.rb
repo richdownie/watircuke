@@ -20,6 +20,8 @@ Given /I click the "(.*)" button/ do |type|
   elsif
     @browser.button(:class, type).exists? then
     @browser.button(:class, type).click
+  else
+    fail("could not find what you asked for")
   end
 end
 
