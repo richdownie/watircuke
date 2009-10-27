@@ -10,3 +10,9 @@ Once installed just run "cucumber features" in Safari, Firefox, Watir (see featu
 
 
 **cukewatir maximizes the Gherkin speak and minimizes the Watir code.    
+
+License:
+
+MIT
+
+Copyright (c) 2009 richdownie
