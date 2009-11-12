@@ -25,3 +25,19 @@ end
 Given /I fill in the text field "(.*)" with "(.*)"/ do |type, text|
   find_text_field(type, text)
 end
+
+Given /I should see the text "(.*)"/ do |txt|
+  describe "Matcher" do
+    it "should have text" do
+      @browser.should have_text(txt)
+    end
+  end
+end
+
+Given /^I am on (.+)$/ do |page_name| 
+  @browser.goto(path_to(page_name))  #This step links up with the "path_to" method found in support/paths.rb
+end
+
+Given /I go to "(.*)"/ do |url|
+  @browser.goto(url)                 #Links to generic urls like "google.com"
+end
