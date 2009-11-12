@@ -143,9 +143,58 @@ module RadioButtonHelper
   end
 end
 
+module SelectListHelper
+  def find_select_list(text, type)
+    if @browser.select_list(:id, type).exists? then
+       @browser.select_list(:id, type).select(text)
+
+    elsif @browser.select_list(:name, type).exists? then
+          @browser.select_list(:name, type).select(text)
+
+    elsif @browser.select_list(:value, type).exists? then
+          @browser.select_list(:value, type).select(text)
+
+    elsif @browser.select_list(:text, type).exists? then
+          @browser.select_list(:text, type).select(text)
+
+    elsif @browser.select_list(:index, type).exists? then
+          @browser.select_list(:index, type).select(text)
+
+    elsif @browser.select_list(:class, /(^|\s)#{type}(\s|$)/).exists? then
+          @browser.select_list(:class, /(^|\s)#{type}(\s|$)/).set(text)
+    else
+      fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
+    end
+  end
+end
+
+module TextFieldHelper
+  def find_text_field(type, text)
+    if @browser.text_field(:id, type).exists? then
+       @browser.text_field(:id, type).set(text)     
+    elsif 
+      @browser.text_field(:name, type).exists? then
+      @browser.text_field(:name, type).set(text)
+    elsif 
+      @browser.text_field(:value, type).exists? then
+      @browser.text_field(:value, type).set(text)
+    elsif 
+      @browser.text_field(:index, type).exists? then
+      @browser.text_field(:index, type).set(text)     
+    elsif 
+      @browser.text_field(:class, /(^|\s)#{type}(\s|$)/).exists? then
+      @browser.text_field(:class, /(^|\s)#{type}(\s|$)/).set(text)    
+    else
+      fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
+    end
+  end
+end
+
 World(ButtonHelper)
 World(CheckboxHelper)
 World(ImageHelper)
 World(LinkHelper)
 World(RadioButtonHelper)
+World(SelectListHelper)
+World(TextFieldHelper)
 World(NavigationHelpers)
