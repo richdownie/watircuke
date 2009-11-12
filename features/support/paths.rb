@@ -77,7 +77,75 @@ module CheckboxHelper
   end
 end
 
+module ImageHelper
+  def find_image(type)
+    if @browser.image(:src, type).exists? then
+       @browser.image(:src, type).click
+    elsif 
+      @browser.image(:id, type).exists? then
+      @browser.image(:id, type).click
+    elsif 
+      @browser.image(:name, type).exists? then
+      @browser.image(:name, type).click
+    elsif 
+      @browser.image(:text, type).exists? then
+      @browser.image(:text, type).click
+    elsif 
+      @browser.image(:index, type).exists? then
+      @browser.image(:index, type).click
+    elsif 
+      @browser.image(:class, type).exists? then
+      @browser.image(:class, type).click
+    else
+      fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
+    end
+  end
+end
+
+module LinkHelper
+  def find_link(type)
+    if @browser.link(:id, type).exists? then
+       @browser.link(:id, type).click
+     elsif 
+       @browser.link(:text, type).exists? then
+       @browser.link(:text, type).click
+    elsif 
+      @browser.link(:class, type).exists? then
+      @browser.link(:class, type).click
+    else
+      fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
+    end
+  end
+end
+
+module RadioButtonHelper
+  def find_radio_button(type)
+    if @browser.radio(:id, type).exists? then
+       @browser.radio(:id, type).click
+    elsif 
+      @browser.radio(:name, type).exists? then
+      @browser.radio(:name, type).click
+    elsif 
+      @browser.radio(:value, type).exists? then
+      @browser.radio(:value, type).click
+    elsif 
+      @browser.radio(:text, type).exists? then
+      @browser.radio(:text, type).click
+    elsif 
+      @browser.radio(:index, type).exists? then
+      @browser.radio(:index, type).click
+    elsif 
+      @browser.radio(:class, type).exists? then
+      @browser.radio(:class, type).click
+    else
+      fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
+    end
+  end
+end
 
 World(ButtonHelper)
 World(CheckboxHelper)
+World(ImageHelper)
+World(LinkHelper)
+World(RadioButtonHelper)
 World(NavigationHelpers)
