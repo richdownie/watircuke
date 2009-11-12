@@ -27,4 +27,57 @@ module NavigationHelpers
   end
 end
 
+module ButtonHelper
+  def find_button(type)
+    if @browser.button(:id, type).exists? then
+       @browser.button(:id, type).click
+    elsif
+       @browser.button(:name, type).exists? then
+       @browser.button(:name, type).click
+    elsif
+       @browser.button(:value, type).exists? then
+       @browser.button(:value, type).click
+    elsif
+       @browser.button(:text, type).exists? then
+       @browser.button(:text, type).click
+    elsif
+      @browser.button(:index, type).exists? then
+      @browser.button(:index, type).click
+    elsif
+      @browser.button(:class, type).exists? then
+      @browser.button(:class, type).click
+    else
+      fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
+    end
+  end
+end
+
+module CheckboxHelper
+  def find_checkbox(type)
+    if @browser.checkbox(:id, type).exists? then
+       @browser.checkbox(:id, type).click
+    elsif
+       @browser.checkbox(:name, type).exists? then
+       @browser.checkbox(:name, type).click
+    elsif
+       @browser.checkbox(:value, type).exists? then
+       @browser.checkbox(:value, type).click
+    elsif
+       @browser.checkbox(:text, type).exists? then
+       @browser.checkbox(:text, type).click
+    elsif
+      @browser.checkbox(:index, type).exists? then
+      @browser.checkbox(:index, type).click
+    elsif
+      @browser.checkbox(:class, type).exists? then
+      @browser.checkbox(:class, type).click
+    else
+      fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
+    end
+  end
+end
+
+
+World(ButtonHelper)
+World(CheckboxHelper)
 World(NavigationHelpers)
