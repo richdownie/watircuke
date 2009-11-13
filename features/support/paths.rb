@@ -1,4 +1,4 @@
-module NavigationHelpers
+module WatirCukeHelpers
   def path_to(page_name)
     case page_name
     # @environment comes from env.rb where it is set to "http://"
@@ -25,9 +25,7 @@ module NavigationHelpers
         "Now, go and add a mapping in #{__FILE__}"
     end
   end
-end
 
-module ButtonHelper
   def find_button(type)
     if @browser.button(:id, type).exists? then
        @browser.button(:id, type).click
@@ -50,9 +48,7 @@ module ButtonHelper
       fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
     end
   end
-end
 
-module CheckboxHelper
   def find_checkbox(type)
     if @browser.checkbox(:id, type).exists? then
        @browser.checkbox(:id, type).click
@@ -75,9 +71,7 @@ module CheckboxHelper
       fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
     end
   end
-end
 
-module ImageHelper
   def find_image(type)
     if @browser.image(:src, type).exists? then
        @browser.image(:src, type).click
@@ -100,9 +94,7 @@ module ImageHelper
       fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
     end
   end
-end
 
-module LinkHelper
   def find_link(type)
     if @browser.link(:id, type).exists? then
        @browser.link(:id, type).click
@@ -116,9 +108,7 @@ module LinkHelper
       fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
     end
   end
-end
 
-module RadioButtonHelper
   def find_radio_button(type)
     if @browser.radio(:id, type).exists? then
        @browser.radio(:id, type).click
@@ -141,9 +131,7 @@ module RadioButtonHelper
       fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
     end
   end
-end
 
-module SelectListHelper
   def find_select_list(text, type)
     if @browser.select_list(:id, type).exists? then
        @browser.select_list(:id, type).select(text)
@@ -166,9 +154,7 @@ module SelectListHelper
       fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
     end
   end
-end
 
-module TextFieldHelper
   def find_text_field(type, text)
     if @browser.text_field(:id, type).exists? then
        @browser.text_field(:id, type).set(text)     
@@ -190,11 +176,4 @@ module TextFieldHelper
   end
 end
 
-World(ButtonHelper)
-World(CheckboxHelper)
-World(ImageHelper)
-World(LinkHelper)
-World(RadioButtonHelper)
-World(SelectListHelper)
-World(TextFieldHelper)
-World(NavigationHelpers)
+World(WatirCukeHelpers)
