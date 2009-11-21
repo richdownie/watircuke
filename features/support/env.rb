@@ -1,5 +1,6 @@
-require 'spec'
- 
+require 'test/unit/assertions'
+include Test::Unit::Assertions
+
 if ENV['SAFARIWATIR']
   require 'safariwatir'
   Browser = Watir::Safari

@@ -26,12 +26,12 @@ Given /I fill in the text field "(.*)" with "(.*)"/ do |type, text|
   find_text_field(type, text)
 end
 
-Given /I should see the text "(.*)"/ do |txt|
-  describe "Matcher" do
-    it "should have text" do
-      @browser.should have_text(txt)
-    end
-  end
+Given /I should see the text "(.*)"/ do |text|
+  assert(@browser.contains_text(text))
+end
+
+Given /I should NOT see the text "(.*)"/ do |text|
+  assert_false(@browser.contains_text(text))
 end
 
 Given /^I am on (.+)$/ do |page_name| 

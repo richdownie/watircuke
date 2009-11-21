@@ -4,6 +4,8 @@ Feature: Testing watircuke's ability to click the many different Element Attribu
   Scenario: test buttons by the "id" attribute
     Given I am on the watircuke page
     And I click the "cuke" button
+    Then I should see the text "Who am I?"
+    Then I should NOT see the text "Java"
 
   Scenario: test buttons by the "name" attribute
     Given I am on the watircuke page
