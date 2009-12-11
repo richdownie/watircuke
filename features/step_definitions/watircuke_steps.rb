@@ -26,6 +26,10 @@ Given /I fill in the text field "(.*)" with "(.*)"/ do |type, text|
   find_text_field(type, text)
 end
 
+Given /I click row "(.*)" in the "(.*)" table/ do |row, type|
+  find_table(row, type)
+end
+
 Given /I should see the text "(.*)"/ do |text|
   assert(@browser.contains_text(text))
 end

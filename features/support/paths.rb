@@ -131,7 +131,25 @@ module WatirCukeHelpers
       fail("Sorry, I wasn't able to find the " + "'#{type}'" + " element ")
     end
   end
-
+  
+  def find_table(row, type)
+    row = row.to_i
+    if @browser.table(:id, type).exists? then
+       @browser.table(:id, type)[row][1].click
+    elsif
+       @browser.table(:name, type).exists? then
+       @browser.table(:name, type)[row][1].click
+    elsif
+       @browser.table(:index, type).exists? then
+       @browser.table(:index, type)[row][1].click
+    elsif
+      @browser.table(:class, type).exists? then
+      @browser.table(:class, type)[row][1].click
+    else
+      fail("could not find what you asked for")
+    end
+  end
+  
   def find_select_list(text, type)
     if @browser.select_list(:id, type).exists? then
        @browser.select_list(:id, type).select(text)
