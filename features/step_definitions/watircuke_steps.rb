@@ -38,6 +38,11 @@ Given /I should NOT see the text "(.*)"/ do |text|
   assert_false(@browser.contains_text(text))
 end
 
+Given /I am redirected to "(.*)"/ do |text|
+  url = @browser.url
+  assert_equal(@environment + text, url)
+end
+
 Given /^I am on (.+)$/ do |page_name| 
   @browser.goto(path_to(page_name))  #This step links up with the "path_to" method found in support/paths.rb
 end
