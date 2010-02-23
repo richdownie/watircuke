@@ -30,12 +30,12 @@ Given /I click row "(.*)" in the "(.*)" table/ do |row, type|
   find_table(row, type)
 end
 
-Given /I should see the text "(.*)"/ do |text|
-  assert(@browser.contains_text(text))
+Then /^I should (NOT )?see the text "([^\"]*)"$/ do |visibility, text|
+  expected = (visibility.to_s.strip == 'NOT') ? assert_false(@browser.contains_text(text)) : assert(@browser.contains_text(text))
 end
 
-Given /I should NOT see the text "(.*)"/ do |text|
-  assert_false(@browser.contains_text(text))
+Then /^I should (NOT )?see the exact text "([^\"]*)"$/ do |visibility, text|
+  expected = (visibility.to_s.strip == 'NOT') ? assert_not_equal(@browser.contains_text(text), text) : assert_equal(@browser.contains_text(text))
 end
 
 Given /I am redirected to "(.*)"/ do |text|
