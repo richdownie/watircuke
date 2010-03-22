@@ -1,46 +1,46 @@
-Given /I click the "(.*)" button/ do |type|
-  find_button(type)
+Given /I click the "(.*)" button/ do |what|
+  find_button(what)
 end
 
-Given /I click the "(.*)" checkbox/ do |type|
-  find_checkbox(type)
+Given /I click the "(.*)" checkbox/ do |what|
+  find_checkbox(what)
 end
 
-Given /I click the "(.*)" image/ do |type|
-  find_image(type)
+Given /I click the "(.*)" image/ do |what|
+  find_image(what)
 end
 
-Given /I click the "(.*)" link/ do |type|
-  find_link(type)
+Given /I click the "(.*)" link/ do |what|
+  find_link(what)
 end
 
-Given /I click the "(.*)" radio button/ do |type|
-  find_radio_button(type)
+Given /I click the "(.*)" radio button/ do |what|
+  find_radio_button(what)
 end
 
-Given /I select "(.*)" from "(.*)"/ do |text, type|
-  find_select_list(text, type)
+Given /I click row "(.*)" in the "(.*)" table/ do |row, column, what|
+  find_table(row, column, what)
 end
 
-Given /I fill in the text field "(.*)" with "(.*)"/ do |type, text|
-  find_text_field(type, text)
+Given /I select "(.*)" from "(.*)"/ do |option, what|
+  find_select_list(option, what)
 end
 
-Given /I click row "(.*)" in the "(.*)" table/ do |row, type|
-  find_table(row, type)
+Given /I fill in the text field "(.*)" with "(.*)"/ do |waht, with|
+  find_text_field(what, with)
 end
 
-Then /^I should (NOT )?see the text "([^\"]*)"$/ do |visibility, text|
-  expected = (visibility.to_s.strip == 'NOT') ? assert_false(@browser.contains_text(text)) : assert(@browser.contains_text(text))
+Then /^I should (NOT )?see the text "([^\"]*)"$/ do |visibility, what|
+  expected = (visibility.to_s.strip == 'NOT') ? assert_false(@browser.contains_text(what)) : assert(@browser.contains_text(what))
 end
 
-Then /^I should (NOT )?see the exact text "([^\"]*)"$/ do |visibility, text|
-  expected = (visibility.to_s.strip == 'NOT') ? assert_not_equal(@browser.contains_text(text), text) : assert_equal(@browser.contains_text(text))
+Then /^I should (NOT )?see the exact text "([^\"]*)"$/ do |visibility, what|
+  expected = (visibility.to_s.strip == 'NOT') ? assert_not_equal(@browser.contains_text(what), what) : assert_equal(@browser.contains_text(what))
 end
 
-Given /I am redirected to "(.*)"/ do |text|
+Given /I am redirected to "(.*)"/ do |what|
   url = @browser.url
-  assert_equal(@environment + text, url)
+  assert_equal(@environment + what, url)
 end
 
 Given /^I am on (.+)$/ do |page_name| 
