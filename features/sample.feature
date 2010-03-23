@@ -3,7 +3,7 @@ Feature: Try it out
 Scenario: Click a Button
   Given I am on the watircuke page
   And I click the "Rubyist" button         
-  Then I should see the text "Who am I"         
+  Then I should see the sentence "Who am I?"         
   
 Scenario: Select a Value
   Given I am on the watircuke page
