@@ -26,7 +26,7 @@ Given /I select "(.*)" from "(.*)"/ do |option, what|
   find_select_list(option, what)
 end
 
-Given /I fill in the text field "(.*)" with "(.*)"/ do |waht, with|
+Given /I fill in the text field "(.*)" with "(.*)"/ do |what, with|
   find_text_field(what, with)
 end
 
