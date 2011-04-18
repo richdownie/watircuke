@@ -20,8 +20,8 @@ module Paths
       when /the youtube page/i
         @environment + "youtube.com"
         
-      when /the google page/i
-        @environment + "google.com"
+      when /the distillery page/i
+        @environment + "thedistillery.com"
         
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
