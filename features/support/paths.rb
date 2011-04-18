@@ -20,6 +20,9 @@ module Paths
       when /the youtube page/i
         @environment + "youtube.com"
         
+      when /the google page/i
+        @environment + "google.com"
+        
     else
       raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
         "Now, go and add a mapping in #{__FILE__}"
